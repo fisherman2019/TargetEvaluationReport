@@ -144,11 +144,3 @@ We have applied the Omicdata -> QC module, which includes Pairwise correlation, 
 
 GTEX and Janssen generated bulk-RNAseq data were compiled into one harmonized expression data set referred to as “Janssen Human BodyMap”. Detailed listing of samples per tissue/cell type and their provenance is provided in a tabular format in Appendix 1
 
-#### **Mouse**
-
-#### **Rat**
-
-#### **Cynomolgus monkey**
-
-#### **Dog**
-
