@@ -1,7 +1,7 @@
 
 # Appendices
 
-### Appendix 1. Overview of samples from different data sources 
+### Appendix 1. Overview of human bodymap samples from different data sources 
 
 | Tissue Type|Body System|Total|EMTAB2319|GSE67543|GTEx|Janssen|phs001158 |
 |------------|-----------|-----|---------|--------|----|-------|-------------|
@@ -219,7 +219,7 @@
 | Smooth Muscle Cell|Urinary System|1                                   |
 | Urothelial Cell|Urinary System|4                                      |
 
-### Appendix 3. Tissue acquisition and sample handling for Janssen Mouse Bodymap
+### Appendix 3. Tissue acquisition and sample handling for Mouse Bodymap
 | Species:|Mouse                                                                                                                                                                                                                                                    
 |---------|----------------|
 | Strain:|C57BL/6J    |                                                                                                           
@@ -238,7 +238,7 @@
 | Euthanasia:|"Euthanasia \(CO2\) followed by approved method to ensure death, e\.g\. exsanguination\." |                         
 | Frozen Tissue Collection Method:|"For each animal, up to three samples \(where feasible\) of at least 50 mg will be collected from each of the tissues listed \(below\)\. If not possible to collect a full 50 mg sample due to tissue size limitations, the maximum amount of the tissue will be collected\. Bilateral tissues/organs will be pooled, per animal\. The weight of each sample will be measured and recorded\. Each sample will be transferred to a uniquely labeled polypropylene tube, immediately flash frozen in liquid nitrogen, and stored frozen (-60 to ‑90°C) until time of shipment\." |
 | Container Label Requirements:|"Study number, animal number, species, matrix of sample\." |                                                                                                                                                                                                                                                       |
-### Appendix 4. Tissue acquisition and sample handling for Janssen Rat Bodymap
+### Appendix 4. Tissue acquisition and sample handling for Rat Bodymap
 
 | Species:|Rat  |                                                                                                                  
 |------|-------|
@@ -258,7 +258,7 @@
 | Frozen Tissue Collection Method:|"For each animal, up to three samples \(where feasible\) of at least 50 mg will be collected from each of the tissues listed \(below\)\. If not possible to collect a full 50 mg sample due to tissue size limitations, the maximum amount of the tissue will be collected\. Bilateral tissues/organs will be pooled, per animal\. The weight of each sample will be measured and recorded\. Each sample will be transferred to a uniquely labeled polypropylene tube, immediately flash frozen in liquid nitrogen, and stored frozen (-60 to ‑90°C) until time of shipment\." |
 | Container Label Requirements:|"Study number, animal number, species, matrix of sample\."|                                                                                                                                                                         
 
-### Appendix 5. Tissue acquisition and sample handling for Janssen Dog Bodymap
+### Appendix 5. Tissue acquisition and sample handling for Dog Bodymap
 
 | Species:|Dog|                                                                                                                                                                                                                                                     
 |---------|----------|
@@ -278,7 +278,7 @@
 | Frozen Tissue Collection Method:|"For each animal, up to three samples \(where feasible\) of at least 50 mg will be collected from each of the tissues listed \(below\)\. If not possible to collect a full 50 mg sample due to tissue size limitations, the maximum amount of the tissue will be collected\. Bilateral tissues/organs will be pooled, per animal\. The weight of each sample will be measured and recorded\. Each sample will be transferred to a uniquely labeled polypropylene tube, immediately flash frozen in liquid nitrogen, and stored frozen (-60 to -90°C) until time of shipment\." |
 | Container Label Requirements:|"Study number, animal number, species, matrix of sample\."  | 
 
-### Appendix 6. Tissue acquisition and sample handling for Janssen Cynomolgus Bodymap
+### Appendix 6. Tissue acquisition and sample handling for Cynomolgus Bodymap
 
 | Species:|Nonhuman Primate|                                                                                              
 |---------|----------------------|
