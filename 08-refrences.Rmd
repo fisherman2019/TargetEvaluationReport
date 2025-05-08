@@ -1,0 +1,50 @@
+
+# References
+
+Abugessaisa, I., Noguchi, S., Carninci, P., & Kasukawa, T. (2017). The FANTOM5 Computation Ecosystem: Genomic Information Hub for Promoters and Active Enhancers. Methods in Molecular Biology (Clifton, N.J.), 1611, 199–217. https://doi.org/10.1007/978-1-4939-7015-5_15
+
+Bairoch, A. (2018). The Cellosaurus, a Cell-Line Knowledge Resource. Journal of Biomolecular Techniques : JBT, 29(2), 25–38. https://doi.org/10.7171/jbt.18-2902-002
+
+Barrett, T., Wilhite, S. E., Ledoux, P., Evangelista, C., Kim, I. F., Tomashevsky, M., Marshall, K. A., Phillippy, K. H., Sherman, P. M., Holko, M., Yefanov, A., Lee, H., Zhang, N., Robertson, C. L., Serova, N., Davis, S., & Soboleva, A. (2013). NCBI GEO: archive for functional genomics data sets--update. Nucleic Acids Research, 41(Database issue), D991-5. https://doi.org/10.1093/nar/gks1193
+
+Benjamin J. Schmiedel,Divya Singh,Ariel Madrigal,Mitchell Kronenberg,Bjoern Peters,Pandurangan Vijayanand, et.al.Impact of Genetic Polymorphisms on Human Immune Cell Gene Expression. (2018).DOI:https://doi.org/10.1016/j.cell.2018.10.022
+
+Dobin, A., Davis, C. A., Schlesinger, F., Drenkow, J., Zaleski, C., Jha, S., Batut, P., Chaisson, M., & Gingeras, T. R. (2013). STAR: ultrafast universal RNA-seq aligner. Bioinformatics (Oxford, England), 29(1), 15–21. https://doi.org/10.1093/bioinformatics/bts635
+
+ENCODE Project Consortium. (2004). The ENCODE (ENCyclopedia Of DNA Elements) Project. Science (New York, N.Y.), 306(5696), 636–640. https://doi.org/10.1126/science.1105136
+
+Fahey, M. E., Bennett, M. J., Mahon, C., Jäger, S., Pache, L., Kumar, D., Shapiro, A., Rao, K., Chanda, S. K., Craik, C. S., Frankel, A. D., & Krogan, N. J. (2011). GPS-Prot: a web-based visualization platform for integrating host-pathogen interaction data. BMC Bioinformatics, 12, 298. https://doi.org/10.1186/1471-2105-12-298
+
+Ghandi, M., Huang, F. W., Jané-Valbuena, J., Kryukov, G. V, Lo, C. C., McDonald, E. R., Barretina, J., Gelfand, E. T., Bielski, C. M., Li, H., Hu, K., Andreev-Drakhlin, A. Y., Kim, J., Hess, J. M., Haas, B. J., Aguet, F., Weir, B. A., Rothberg, M. V, Paolella, B. R., … Sellers, W. R. (2019). Next-generation characterization of the Cancer Cell Line Encyclopedia. Nature, 569(7757), 503–508. https://doi.org/10.1038/s41586-019-1186-3
+
+GTEx Consortium. (2013). The Genotype-Tissue Expression (GTEx) project. Nature Genetics, 45(6), 580–585. https://doi.org/10.1038/ng.2653
+
+Law, M., & Shaw, D. R. (2018). Mouse Genome Informatics (MGI) Is the International Resource for Information on the Laboratory Mouse. Methods in Molecular Biology (Clifton, N.J.), 1757, 141–161. https://doi.org/10.1007/978-1-4939-7737-6_7
+
+Lee, C. M., Barber, G. P., Casper, J., Clawson, H., Diekhans, M., Gonzalez, J. N., Hinrichs, A. S., Lee, B. T., Nassar, L. R., Powell, C. C., Raney, B. J., Rosenbloom, K. R., Schmelter, D., Speir, M. L., Zweig, A. S., Haussler, D., Haeussler, M., Kuhn, R. M., & Kent, W. J. (2020). UCSC Genome Browser enters 20th year. Nucleic Acids Research, 48(D1), D756–D761. https://doi.org/10.1093/nar/gkz1012
+
+Li, B., & Dewey, C. N. (2011). RSEM: accurate transcript quantification from RNA-Seq data with or without a reference genome. BMC Bioinformatics, 12, 323. https://doi.org/10.1186/1471-2105-12-323
+
+Mailman, M. D., Feolo, M., Jin, Y., Kimura, M., Tryka, K., Bagoutdinov, R., Hao, L., Kiang, A., Paschall, J., Phan, L., Popova, N., Pretel, S., Ziyabari, L., Lee, M., Shao, Y., Wang, Z. Y., Sirotkin, K., Ward, M., Kholodov, M., … Sherry, S. T. (2007). The NCBI dbGaP database of genotypes and phenotypes. Nature Genetics, 39(10), 1181–1186. https://doi.org/10.1038/ng1007-1181
+
+McFarland, J. M., Ho, Z. V, Kugener, G., Dempster, J. M., Montgomery, P. G., Bryan, J. G., Krill-Burger, J. M., Green, T. M., Vazquez, F., Boehm, J. S., Golub, T. R., Hahn, W. C., Root, D. E., & Tsherniak, A. (2018). Improved estimation of cancer dependencies from large-scale RNAi screens using model-based normalization and data integration. Nature Communications, 9(1), 4610. https://doi.org/10.1038/s41467-018-06916-5
+
+Mitchell, A. L., Attwood, T. K., Babbitt, P. C., Blum, M., Bork, P., Bridge, A., Brown, S. D., Chang, H.-Y., El-Gebali, S., Fraser, M. I., Gough, J., Haft, D. R., Huang, H., Letunic, I., Lopez, R., Luciani, A., Madeira, F., Marchler-Bauer, A., Mi, H., … Finn, R. D. (2019). InterPro in 2019: improving coverage, classification and access to protein sequence annotations. Nucleic Acids Research, 47(D1), D351–D360. https://doi.org/10.1093/nar/gky1100
+
+O’Leary, N. A., Wright, M. W., Brister, J. R., Ciufo, S., Haddad, D., McVeigh, R., Rajput, B., Robbertse, B., Smith-White, B., Ako-Adjei, D., Astashyn, A., Badretdin, A., Bao, Y., Blinkova, O., Brover, V., Chetvernin, V., Choi, J., Cox, E., Ermolaeva, O., … Pruitt, K. D. (2016). Reference sequence (RefSeq) database at NCBI: current status, taxonomic expansion, and functional annotation. Nucleic Acids Research, 44(D1), D733-45. https://doi.org/10.1093/nar/gkv1189
+
+Okonechnikov, K., Conesa, A., & García-Alcalde, F. (2016). Qualimap 2: advanced multi-sample quality control for high-throughput sequencing data. Bioinformatics (Oxford, England), 32(2), 292–294. https://doi.org/10.1093/bioinformatics/btv566
+
+Raudvere, U., Kolberg, L., Kuzmin, I., Arak, T., Adler, P., Peterson, H., & Vilo, J. (2019). g:Profiler: a web server for functional enrichment analysis and conversions of gene lists (2019 update). Nucleic Acids Research, 47(W1), W191–W198. https://doi.org/10.1093/nar/gkz369
+
+Schneider, A., Dessimoz, C., & Gonnet, G. H. (2007). OMA Browser--exploring orthologous relations across 352 complete genomes. Bioinformatics (Oxford, England), 23(16), 2180–2182. https://doi.org/10.1093/bioinformatics/btm295
+
+Stunnenberg, H. G., International Human Epigenome Consortium, & Hirst, M. (2016). The International Human Epigenome Consortium: A Blueprint for Scientific Collaboration and Discovery. Cell, 167(5), 1145–1149. https://doi.org/10.1016/j.cell.2016.11.007
+
+UniProt Consortium. (2019). UniProt: a worldwide hub of protein knowledge. Nucleic Acids Research, 47(D1), D506–D515. https://doi.org/10.1093/nar/gky1049
+
+Wang, M. et al. Version 4.0 of PaxDb: Protein abundance data, integrated across model organisms, tissues, and cell-lines Proteomics 2015, 10.1002/pmic.201400441
+
+Weinstein, J. N., Collisson, E. A., Mills, G. B., Shaw, K. R. M., Ozenberger, B. A., Ellrott, K., Shmulevich, I., Sander, C., & Stuart, J. M. (2013). The Cancer Genome Atlas Pan-Cancer analysis project. Nature Genetics, 45(10), 1113–1120. https://doi.org/10.1038/ng.2764.
+
+Yates, A. D., Achuthan, P., Akanni, W., Allen, J., Allen, J., Alvarez-Jarreta, J., Amode, M. R., Armean, I. M., Azov, A. G., Bennett, R., Bhai, J., Billis, K., Boddu, S., Marugán, J. C., Cummins, C., Davidson, C., Dodiya, K., Fatima, R., Gall, A., … Flicek, P. (2020). Ensembl 2020. Nucleic Acids Research, 48(D1), D682–D688. https://doi.org/10.1093/nar/gkz966

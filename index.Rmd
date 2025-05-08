@@ -1,0 +1,29 @@
+---
+site: bookdown::bookdown_site
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+description: "This report summarizes several aspects related with the mRNA expression of `r GeneofInterest`"
+---
+
+---
+title: "Target in-silico Expression Assessment: `r GeneofInterest`"
+subtitle: "Draft report for assessment of structure and contents"
+author: "Xingjun Liu, Shicheng Guo, Mary Helen Black"
+organization: "Population Analytics, DPDS Computer Science"
+date: "`r Sys.Date()`"
+Document No: "`r DocumentNo`"
+---
+
+```{r settings, include=FALSE}
+library(knitr)
+library(officedown)
+library(officer)
+opts_chunk$set(echo = TRUE, tab.lp="Table:", fig.lp="Figure:")
+fp <- fp_par(text.align = "center", padding = 20, border.bottom = fp_border())
+ft <- fp_text(font.size = 12, bold = TRUE, color = "#C32900", font.family = "Cambria")
+```
+
+***Confidentiality statement***
+
+The information in this document contains trade secrets and commercial information that are privileged or confidential and may not be disclosed unless such disclosure is required by applicable law or regulations. In any event, the individuals to whom the information is disclosed must be informed that the information is *privileged* or *confidential* and may not be further disclosed by them. These restrictions on disclosure will apply equally to *all* future information supplied to you that is indicated as *privileged or confidential*

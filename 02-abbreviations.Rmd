@@ -1,0 +1,19 @@
+# Abbreviations
+
+| ABBREVIATION  | FULL DESCRIPTION  |
+|-|-|
+| CCLE  | Cancer Cell Line Encyclopedia compendium  |
+| CCDS  | Consensus Coding Sequence  |
+| CD  | Cluster of differentiation  |
+| dbGAP  | Database of Genotypes and Phenotypes  |
+| DICE  | Database of Immune Cell Expression  |
+| DNA  | Deoxyribonucleic acid  |
+| EMBL-EBI  | European Molecular Biology Laboratory – European Bioinformatic Institute  |
+| FANTOM5  | Functional Annotation of the Mammalian Genome, version 5  |
+| FPKM  | Fragments per kilobase per million reads  |
+| GTEx  | Genotype-Tissue Expression consortium (version 8)  |
+| NCBI GEO  | National Center for Biotechnology Information Gene Expression Omnibus database  |
+|pTPM | Protein coding Transcripts million reads |
+| RNA  | Ribonucleic acid  |
+| TPM  | Transcripts per kilobase per million reads  |
+| UTR  | Untranslated region  |

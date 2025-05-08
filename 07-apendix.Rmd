@@ -1,0 +1,322 @@
+
+# Appendices
+
+### Appendix 1. Overview of samples from different data sources 
+
+| Tissue Type|Body System|Total|EMTAB2319|GSE67543|GTEx|Janssen|phs001158 |
+|------------|-----------|-----|---------|--------|----|-------|-------------|
+| Adipose - Subcutaneous|Digestive|267|||267||                               |
+| Adipose - Visceral|Digestive|171|||171||                                   |
+| Adrenal Gland|Endocrine|121|||121||                                         |
+| Alpha Cell - Adult|Digestive|6||6|||                                       |
+| Amygdala|Nervous|45|||45||                                                  |
+| Anterior cingulate cortex|Nervous|53|||53||                                 |
+| Artery - Aorta|Cardiovascular|195|||195||                                  |
+| Artery - Coronary|Cardiovascular|53|||53||                                 |
+| Artery - Tibial|Cardiovascular|262|||262||                                 |
+| B CD5|Immune|4|4||||                                                        |
+| B Memory|Immune|5|5||||                                                     |
+| B Naïve|Immune|5|5||||                                                      |
+| Basal Ganglia|Nervous|1||||1|                                               |
+| Beta Cell - Adult|Digestive|7||7|||                                        |
+| Bladder|Urinary|16|||11|5|                                                  |
+| Bone Marrow|Immune|4||||4|                                                  |
+| Breast - Mammary Tissue|Reproductive|160|||160||                           |
+| Caudate|Nervous|90|||90||                                                   |
+| CD4 CM|Immune|5|5||||                                                       |
+| CD4 EM|Immune|5|5||||                                                       |
+| CD4 Naïve|Immune|5|5||||                                                    |
+| CD4 Th1|Immune|5|5||||                                                      |
+| CD4 Th17|Immune|5|5||||                                                     |
+| CD4 Th2|Immune|5|5||||                                                      |
+| CD4 Treg|Immune|5|5||||                                                     |
+| CD8 CM|Immune|4|4||||                                                       |
+| CD8 EM|Immune|5|5||||                                                       |
+| CD8 Naïve|Immune|5|5||||                                                    |
+| Cerebellar Hemisphere|Nervous|71|||71||                                     |
+| Cerebellum|Nervous|102|||102||                                              |
+| Cerebral Cortex|Nervous|5||||5|                                             |
+| Cerebral Meninges|Nervous|6||||6|                                           |
+| Cingulum Bundle|Nervous|2||||2|                                             |
+| Colon - Ascending|Digestive|4||||4|                                        |
+| Colon - Ascending\.Mucosa|Digestive|4||||4|                                |
+| Colon - Descending|Digestive|4||||4|                                       |
+| Colon - Descending\.Mucosa|Digestive|2||||2|                               |
+| Colon - Sigmoid|Digestive|110|||110||                                      |
+| Colon - Sigmoid\.Mucosa|Digestive|3||||3|                                  |
+| Colon - Transverse|Digestive|152|||152||                                   |
+| Colon - Transverse\.Mucosa|Digestive|2||||2|                               |
+| Cortex|Nervous|88|||88||                                                    |
+| Dorsal root ganglia|Nervous|5|||||5                                         |
+| Entorhinal cortex|Nervous|1||||1|                                           |
+| Esophagus - GJ|Digestive|121|||121||                                       |
+| Esophagus - Mucosa|Digestive|260|||260||                                   |
+| Esophagus - Muscularis|Digestive|212|||212||                               |
+| Fallopian Tube|Reproductive|4|||4||                                         |
+| Frontal Cortex|Nervous|74|||74||                                            |
+| Gallbladder|Digestive|3||||3|                                               |
+| Gland Pineal|Nervous|1||||1|                                                |
+| Globus Pallidus|Nervous|1||||1|                                             |
+| Habenula|Nervous|5||||5|                                                    |
+| Heart - Atrial Appendage|Cardiovascular|168|||168||                        |
+| Heart - Left Ventricle|Cardiovascular|139|||139||                          |
+| Hippocampus|Nervous|49|||49||                                               |
+| Hypothalamus|Nervous|45|||45||                                              |
+| Ileum|Digestive|3||||3|                                                     |
+| Ileum - Terminal|Digestive|75|||75||                                       |
+| Ileum\.Mucosa|Digestive|5||||5|                                             |
+| Insula|Nervous|4||||4|                                                      |
+| Islet - Adult|Digestive|18||||18|                                          |
+| Jejunum|Digestive|4||||4|                                                   |
+| Kidney|Urinary|4||||4|                                                      |
+| Kidney - Cortex|Urinary|12|||12||                                          |
+| Liver|Digestive|90|||90||                                                   |
+| Lung|Respiratory|207|||207||                                                |
+| Lymph Node|Immune|5||||5|                                                   |
+| Medulla Oblongata|Nervous|5||||5|                                           |
+| Minor Salivary Gland|Endocrine|44|||44||                                    |
+| Muscle - Skeletal|Muscular|321|||321||                                     |
+| Muscle Smooth|Muscular|4||||4|                                              |
+| Nerve - Tibial|Nervous|225|||225||                                         |
+| Spinal cord|Nervous|50|||50||                                               |
+| Spleen|Immune|78|||75|3|                                                    |
+| Stem|Nervous|4||||4|                                                        |
+| Stomach|Digestive|101|||101||                                               |
+| Stomach\.Mucosa|Digestive|2||||2|                                           |
+| Substantia nigra|Nervous|35|||35||                                          |
+| Temporal Lobe|Nervous|5||||5|                                               |
+| Testis|Reproductive|139|||139||                                             |
+| Thalamus|Nervous|5||||5|                                                    |
+| Thymus|Immune|5||||5|                                                       |
+| Thyroid|Endocrine|225|||225||                                               |
+| Uterus|Reproductive|70|||70||                                               |
+| Vagina|Reproductive|71|||71||                                               |
+| Whole Blood|Immune|269|||269||                                              |
+
+### Appendix 2. Primary Cell Types and Counts from FANTOM Dataset
+| Tissue Type|Body System|Total                                    |
+|--------------|-----------|----------------|
+| Preadipocyte|Anatomical Cavity|3 |
+| B cell|Blood|3 |
+| Basophil|Blood|3 |
+| Blood Vessel Endothelial Progenitor Cell|Blood|3 |
+| Dendritic Cell\_Myeloid Immature|Blood|3                              |
+| Eosinophil|Blood|3                                                    |
+| Hematopoietic Stem Cell\_CD34\+|Blood|2                               |
+| Macrophage|Blood|3                                                    |
+| Monocyte|Blood|3                                                      |
+| Mononuclear Cell|Blood|3                                              |
+| Natural Killer Cell|Blood|3                                           |
+| Neutrophil|Blood|3                                                    |
+| Stem Cell|Blood|2                                                     |
+| T cell: CD4\+CD25\+CD45RA\-|Blood|3                                   |
+| T cell: CD4\+CD25\+CD45RA\+|Blood|3                                   |
+| T cell: CD4\+CD25\-CD45RA\-|Blood|3                                   |
+| T cell: CD4\+CD25\-CD45RA\+|Blood|3                                   |
+| T cell\_CD4\+|Blood|3                                                 |
+| T cell\_CD8\+|Blood|3                                                 |
+| Blood Vessel Endothelial Cell|Blood Vessel|3                          |
+| Fibroblast|Blood Vessel|3                                             |
+| Smooth Muscle Cell|Blood Vessel|3                                     |
+| Osteoblast|Bone|3                                                     |
+| Osteocyte|Bone|3                                                      |
+| Adipocyte|Breast|2                                                    |
+| Fibroblast|Breast|3                                                   |
+| Pre\-adipocyte|Breast|2                                               |
+| Blood Vessel Endothelial Cell|Capillary|3                             |
+| Chondroblast|Cartilage|3                                              |
+| Chondrocyte|Cartilage|3                                               |
+| Anulus Fibrosus Cell of Intervertebralis|Central Nervous System|2     |
+| Astrocyte|Central Nervous System|3                                    |
+| Fibroblast|Central Nervous System|3                                   |
+| Mesenchymal Stem Cell|Central Nervous System|1                        |
+| Neural Stem Cell|Central Nervous System|2                             |
+| Neuron|Central Nervous System|3                                       |
+| Nucleus Pulposis Cell of Intervertebralis|Central Nervous System|3    |
+| Pericyte|Central Nervous System|3                                     |
+| Perineural Cell|Central Nervous System|2                              |
+| Smooth Muscle Cell|Central Nervous System|3                           |
+| Adipocyte|Connective Tissue|3                                         |
+| Mesenchymal Precursor Cell|Connective Tissue|3                        |
+| Mesenchymal Stem Cell|Connective Tissue|3                             |
+| Mesothelial Cell|Connective Tissue|3                                  |
+| Preadipocyte|Connective Tissue|3                                      |
+| Tenocyte|Connective Tissue|3                                          |
+| Amniotic Epithelial Cell|Embryo|3                                     |
+| Mesenchymal Stem Cell|Embryo|2                                        |
+| Unclassifiable|Embryo|3                                               |
+| Mesenchymal Precursor Cell|Female Reproductive System|4               |
+| Placental Epithelial Cell|Female Reproductive System|3                |
+| Smooth Muscle Cell|Female Reproductive System|2                       |
+| Epithelial Cell\_Intestinal|Gastrointestinal System|1                 |
+| Esophageal Epithelial Cell|Gastrointestinal System|3                  |
+| Smooth Muscle Cell|Gastrointestinal System|3                          |
+| Salivary Acinar Cell|Gland|3                                          |
+| Epithelial Cell|Gum|3                                                 |
+| Epithelial Cell Rests of Malassez|Gum|3                               |
+| Fibroblast|Gum|3                                                      |
+| Keratinocyte|Gum|1                                                    |
+| Cardiac Muscle Cell|Heart|3                                           |
+| Fibroblast|Heart|6                                                    |
+| Mesenchymal Precursor Cell|Heart|4                                    |
+| Preadipocyte|Heart|3                                                  |
+| Common Myeloid Progenitor|Hematopoietic and Lymphoid System|2         |
+| Fibroblast|Hematopoietic and Lymphoid System|3                        |
+| Granulocyte Macrophage Progenitor|Hematopoietic and Lymphoid System|3 |
+| Mesenchymal Precursor Cell|Hematopoietic and Lymphoid System|3        |
+| Mesenchymal Stem Cell|Hematopoietic and Lymphoid System|4             |
+| Neutrophil|Hematopoietic and Lymphoid System|3                        |
+| Promyelocytes/Myelocytes|Hematopoietic and Lymphoid System|3          |
+| Stem Cell|Hematopoietic and Lymphoid System|1                         |
+| Blood Vessel Endothelial Cell|Internal Thoracic Artery|2              |
+| Smooth Muscle Cell|Internal Thoracic Artery|3                         |
+| Adipocyte\_Lipocyte of Liver|Liver|3                                  |
+| Hepatic Sinusoidal Endothelial Cell|Liver|3                           |
+| Hepatocyte|Liver|3                                                    |
+| Mesenchymal Stem Cell|Liver|3                                         |
+| Epithelial Cell|Male Reproductive System|3                            |
+| Prostatic Stromal Cell|Male Reproductive System|3                     |
+| Sertoli Cell|Male Reproductive System|2                               |
+| Smooth Muscle Cell|Male Reproductive System|3                         |
+| Meningeal Cell|Meninges|3                                             |
+| Satellite Cell\_Skeletal Muscle|Muscle|3                              |
+| Skeletal Muscle Cell|Muscle|6                                         |
+| Skeletal Muscle Myoblast|Muscle|3                                     |
+| Fibroblast|Periodontal Ligament|3                                     |
+| Schwann Cell|Peripheral Nervous System|3                              |
+| Epithelial Cell|Respiratory System|3                                  |
+| Epithelial Cell of Lung\_Bronchial|Respiratory System|7               |
+| Epithelial Cell of Lung\_Small Airway|Respiratory System|3            |
+| Fibroblast|Respiratory System|3                                       |
+| Pneumocyte|Respiratory System|3                                       |
+| Smooth Muscle Cell|Respiratory System|3                               |
+| Tracheal Epithelial Cell|Respiratory System|2                         |
+| Ciliated Epithelial Cell|Sensory System|3                             |
+| Corneal Epithelial Cell|Sensory System|3                              |
+| Fibroblast|Sensory System|2                                           |
+| Keratocyte|Sensory System|3                                           |
+| Lens Epithelial Cell|Sensory System|3                                 |
+| Trabecular Meshwork Cell|Sensory System|3                             |
+| Fibroblast|Skin|6                                                     |
+| Hair Follicle\_Dermal Papilla Cell|Skin|3                             |
+| Hair Follicle\_Outer Root Sheath Cell|Skin|2                          |
+| Keratinocyte|Skin|3                                                   |
+| Mast Cell|Skin|4                                                      |
+| Melanocyte|Skin|3                                                     |
+| Sebocyte|Skin|3                                                       |
+| Smooth Muscle Cell|Subclavian Artery|3                                |
+| Synovial Cell|Synovium|3                                              |
+| Fibroblast|Trophoblast|3                                              |
+| Smooth Muscle Cell|Umbilical Artery|4                                 |
+| Blood Vessel Endothelial Cell|Umbilical Vein|3                        |
+| Smooth Muscle Cell|Umbilical Vein|3                                   |
+| Endothelial Cell|Urinary System|4                                     |
+| Epithelia Cell of Kidney|Urinary System|3                             |
+| Epithelial Cell of Kidney\_Proximal Tubule|Urinary System|3           |
+| Epithelial Cell of Kidney\_Renal Cortex|Urinary System|2              |
+| Mesangial Cell\_Intraglomerular|Urinary System|3                      |
+| Pre\-adipocyte|Urinary System|1                                       |
+| Smooth Muscle Cell|Urinary System|1                                   |
+| Urothelial Cell|Urinary System|4                                      |
+
+### Appendix 3. Tissue acquisition and sample handling for Janssen Mouse Bodymap
+| Species:|Mouse                                                                                                                                                                                                                                                    
+|---------|----------------|
+| Strain:|C57BL/6J    |                                                                                                           
+| Condition:|"Purpose\-bred, naïve" |                                                                                             
+| Original Source:|"Jackson Labs, Bar Harbor, ME" |                                                                               
+| Number of Donors:|Male: 5/Female: 5 |                                                                                           
+| Expected Age at Sample Collection:|Approximately 7\-8 weeks of age|                                                             
+| Whole Blood Collection:|Whole blood will be collected into prelabelled tubes that include the study number and additional label requirements indicated below\. |                                                                                                  
+| Whole Blood Collection \(site: vessel\):|Vena cava after carbon dioxide inhalation |                                            
+| Whole Blood Collection Volume \(mL\):|2\.5 mL |                                                                                 
+| Whole Blood Collection Tube:|PAXgene Blood RNA Tube |                                                                           
+| Whole Blood Storage \(for at least 2 hours\):|Ambient |                                                                         
+| Whole Blood Processing \(blood\):|"Whole Blood, single aliquot will be collected into a PAXgene tube, mixed immediately by inverting the tubes 10 times \(without vortexing\), maintained at room temperature for at least 2 hours and stored frozen\."|     
+| Final Storage Temperature \(Whole blood\):|Frozen (-60 to ‑90°C) |                                                          
+| Container Label Requirements:|"Study number, animal number, species, matrix of sample\." |                                      
+| Euthanasia:|"Euthanasia \(CO2\) followed by approved method to ensure death, e\.g\. exsanguination\." |                         
+| Frozen Tissue Collection Method:|"For each animal, up to three samples \(where feasible\) of at least 50 mg will be collected from each of the tissues listed \(below\)\. If not possible to collect a full 50 mg sample due to tissue size limitations, the maximum amount of the tissue will be collected\. Bilateral tissues/organs will be pooled, per animal\. The weight of each sample will be measured and recorded\. Each sample will be transferred to a uniquely labeled polypropylene tube, immediately flash frozen in liquid nitrogen, and stored frozen (-60 to ‑90°C) until time of shipment\." |
+| Container Label Requirements:|"Study number, animal number, species, matrix of sample\." |                                                                                                                                                                                                                                                       |
+### Appendix 4. Tissue acquisition and sample handling for Janssen Rat Bodymap
+
+| Species:|Rat  |                                                                                                                  
+|------|-------|
+| Strain:|CDÒ [Crl:CD®\(SD\)]; Sprague Dawley   |                                                                               
+| Condition:|"Purpose\-bred, naïve"  |                                                                                            
+| Original Source:|"Charles River Laboratories, Inc\., Raleigh, NC or Kingston, NY"  |                                            
+| Number of Donors:|Male: 5/Female: 5  |                                                                                          
+| Expected Age at Sample Collection:|Approximately 12 weeks of age  |                                                             
+| Whole Blood Collection:|Whole blood will be collected into prelabelled tubes that include the study number and additional label requirements indicated below\.  |                                                                                                 
+| Whole Blood Collection \(site: vessel\):|Vena cava after carbon dioxide inhalation  |                                           
+| Whole Blood Collection Volume \(mL\):|2\.5 mL  |                                                                                
+| Whole Blood Collection Tube:|PAXgene Blood RNA Tube  |                                                                          
+| Whole Blood Storage \(for at least 2 hours\):|Ambient  |                                                                        
+| Whole Blood Processing \(blood\):|"Whole Blood, single aliquot will be collected into a PAXgene tube, mixed immediately by inverting the tubes 10 times \(without vortexing\), maintained at room temperature for at least 2 hours and stored frozen\." |    
+| Final Storage Temperature \(Whole blood\):|Frozen (-60 to ‑90°C)  |                                                         
+| Euthanasia:|"Euthanasia \(CO2\) followed by approved method to ensure death, e\.g\. exsanguination\."|                          
+| Frozen Tissue Collection Method:|"For each animal, up to three samples \(where feasible\) of at least 50 mg will be collected from each of the tissues listed \(below\)\. If not possible to collect a full 50 mg sample due to tissue size limitations, the maximum amount of the tissue will be collected\. Bilateral tissues/organs will be pooled, per animal\. The weight of each sample will be measured and recorded\. Each sample will be transferred to a uniquely labeled polypropylene tube, immediately flash frozen in liquid nitrogen, and stored frozen (-60 to ‑90°C) until time of shipment\." |
+| Container Label Requirements:|"Study number, animal number, species, matrix of sample\."|                                                                                                                                                                         
+
+### Appendix 5. Tissue acquisition and sample handling for Janssen Dog Bodymap
+
+| Species:|Dog|                                                                                                                                                                                                                                                     
+|---------|----------|
+| Strain:|Beagle |                                                                                                                
+| Condition:|"Purpose\-bred, naïve"  |                                                                                            
+| Original Source:|"Marshall BioResources, North Rose, NY"  |                                                                     
+| Number of Donors:|Male: 5/Female: 5  |                                                                                          
+| Expected Age at Sample Collection:|11\-13 months of age  |                                                                      
+| Whole Blood Collection:|Whole blood will be collected into prelabelled tubes that include the study number and additional label requirements indicated below\. |                                                                                                  
+| Whole Blood Collection \(site: vessel\):|Jugular or another suitable vessel  |                                                  
+| Whole Blood Collection Volume \(mL\):|2\.5 mL  |                                                                                
+| Whole Blood Collection Tube:|PAXgene Blood RNA Tube  |                                                                          
+| Whole Blood Storage \(for at least 2 hours\):|Ambient |                                                                         
+| Whole Blood Processing \(blood\):|"Whole Blood, single aliquot will be collected into a PAXgene tube, mixed immediately by inverting the tubes 10 times \(without vortexing\), maintained at room temperature for at least 2 hours and stored frozen\." |    
+| Final Storage Temperature \(Whole blood\):|Frozen (-60 to -90°C)|                                                           
+| Euthanasia:|"Euthanasia solution administered under sedation, if necessary (e\.g\. ketamine\), followed by approved method to ensure death, e\.g\. exsanguination\."  |                                                                                         
+| Frozen Tissue Collection Method:|"For each animal, up to three samples \(where feasible\) of at least 50 mg will be collected from each of the tissues listed \(below\)\. If not possible to collect a full 50 mg sample due to tissue size limitations, the maximum amount of the tissue will be collected\. Bilateral tissues/organs will be pooled, per animal\. The weight of each sample will be measured and recorded\. Each sample will be transferred to a uniquely labeled polypropylene tube, immediately flash frozen in liquid nitrogen, and stored frozen (-60 to -90°C) until time of shipment\." |
+| Container Label Requirements:|"Study number, animal number, species, matrix of sample\."  | 
+
+### Appendix 6. Tissue acquisition and sample handling for Janssen Cynomolgus Bodymap
+
+| Species:|Nonhuman Primate|                                                                                              
+|---------|----------------------|
+| Strain:|Cynomolgus monkey |                                                                                                     
+| Condition:|"Purpose\-bred, naive",  |                                                                                           
+| Original Source:|China,Cambodia  |                                                                                              
+| Sexually Immature:|Age: 3 years,Age: 3 years |                                                                                  
+| Weight: 3- 4 kg,Weight: 3- 4 kg   |                                                                                             
+| Sexually Mature:|Age: 4\-7 years,Age: 4\-7 years  |                                                                             
+| ,Weight:  3- 6 kg,Weight: 3- 6 kg                                                                                               
+| Number of Donors:|Male: 5/sexual maturity,Female: 5/sexual maturity  |                                                          
+| Expected Age at Sample Collection:|Noted above  |                                                                               
+| Whole Blood Collection:|Whole blood will be collected into prelabelled tubes that include the study number and additional label requirements indicated below\. |                                                                                                  
+| Whole Blood Collection \(site: vessel\):|Jugular or another suitable vessel |                                                   
+| Whole Blood Collection Volume \(mL\):|2\.5 mL  |                                                                                
+| Whole Blood Collection Tube:|PAXgene Blood RNA Tube |                                                                           
+| Whole Blood Storage \(for at least 2 hours\):|Ambient  |                                                                        
+| Whole Blood Processing \(blood\):|"Whole Blood, single aliquot will be collected into a PAXgene tube, mixed immediately by inverting the tubes 10 times \(without vortexing\), maintained at room temperature for at least 2 hours and stored frozen\." |    
+| Final Storage Temperature \(Whole blood\):|Frozen (-60 to -90°C) |                                                          
+| Euthanasia:|"Euthanasia solution administered under sedation, if necessary \(e\.g\. ketamine\), followed by approved method to ensure death, e\.g\. exsanguination\." |                                                                                          
+| Frozen Tissue Collection Method:|"For each animal, up to three samples \(where feasible\) of at least 50 mg will be collected from each of the tissues listed \(below\)\. If not possible to collect a full 50 mg sample due to tissue size limitations, the maximum amount of the tissue will be collected\. Bilateral tissues/organs will be pooled, per animal\. The weight of each sample will be measured and recorded\. Each sample will be transferred to a uniquely labeled polypropylene tube, immediately flash frozen in liquid nitrogen, and stored frozen (-60 to -90°C) until time of shipment\.", |
+| Container Label Requirements:|"Study number, animal number, species, matrix of sample\." |  
+
+### Appendix 7. Single cell transcriptomic datasets of HPA (Human Protein Atlas)
+
+| Tissue          | Data source | No. of M reads | No. of cells | Correlation with HPA bulk RNA|    Reference  |
+|-----------------|-------------|----------------|--------------|-------------------|-------------------------------|
+| Colon           | GSE116222   | 13.1           | 11167        | 0.811             | Parikh K et al. (2019)        |
+| Eye             | GSE137537   | 23.1           | 20091        |                   | Menon M et al. (2019)         |
+| Heart muscle    | GSE109816   | 396.8          | 9182         | 0.797             | Wang L et al. (2020)          |
+| Small intestine | GSE125970   | 60.1           | 6167         |                   | Wang Y et al. (2020)          |
+| Kidney          | GSE131685   | 56.7           | 25279        | 0.867             | Liao J et al. (2020)          |
+| Liver           | GSE115469   | 28.7           | 8439         | 0.837             | MacParland SA et al. (2018)   |
+| Lung            | GSE130148   | 6.9            | 4599         | 0.863             | Vieira Braga FA et al. (2019) |
+| Placenta        | E-MTAB-6701 | 346.9          | 18547        | 0.879             | Vento-Tormo R et al. (2018)   |
+| Pancreas        | GSE131886   | 93.2           | 3719         | 0.829             | Qadir MMF et al. (2020)       |
+| Skin            | GSE130973   | 57.1           | 15798        | 0.756             | Solé-Boldo L et al. (2020)    |
+| Prostate        | GSE117403   | 179.3          | 35862        | 0.756             | Henry GH et al. (2018)        |
+| Rectum          | GSE125970   | 60.9           | 3898         | 0.756             | Wang Y et al. (2020)          |
+| PBMC            | GSE112845   | 19.5           | 4972         | 0.756             | Chen J et al. (2018)          |
+| Testis          | GSE120508   | 71.8           | 6490         | 0.756             | Guo J et al. (2018)           |

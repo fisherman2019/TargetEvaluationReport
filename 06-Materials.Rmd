@@ -1,0 +1,154 @@
+# Materials & Methods {#Materials}
+
+## Bulk RNAseq
+### Data processing
+
+RNAseq alignment and quantification were performed using reference genomes and transcriptome annotations as managed by the European Bioinformatics Institute (EBI) and Ensembl Genome Browser. Version numbers and persistent file locations for the various species analyzed in this report can be found in the following table.
+
+Table 6. Reference genome and gene code models
+
+| Species|Type|File format|Location                      |
+|----------|----|-----------|--------------------------------|
+| Human|Reference genome|Fasta|GRCh38 primary assembly       |
+| Human|Transcriptome annotation|GTF|Gencode v37             |
+| Mouse|Reference genome|Fasta|GRCm39 primary assembly       |
+| Mouse|Transcriptome annotation|GTF|Gencode M26             |
+| Cynomolgus |Reference genome|Fasta|Macaca fasculiaris 6 |
+| Cynomolgus|Transcriptome annotation|GTF|Ensembl 103        |
+| Dog|Reference genome|Fasta|CanFam3                      |
+| Dog|Transcriptome annotation|GTF|Ensembl 103               |
+
+### Read Filtering and Trimming
+All read files were pre-processed to remove poor quality reads and to trim poor-quality bases using the software tool trimgalore. Unless listed in table above, default parameter settings were used. 
+
+### Alignment and Quantification
+Alignment was performed using STAR version 2.7.8a (Dobin et al., 2013) using the combinations of reference genomes and transcriptome annotations as described above. Gene and transcript level quantification was performed using RSEM version 1.3.3 (Li & Dewey, 2011). Unless listed in this Table, default parameter settings were used.
+
+###	Expression Normalization
+The gene expression of each bulk RNA-Seq sample was reported as TPM (Transcripts per Kilobase per Million reads sequenced) or FPKM (Fragments per Kilobase per Million reads sequenced).  TPM and FPKM are expressions based on the count of library fragments that map to a given feature (gene or transcript) normalized for feature length and the number of fragments sequenced.  The difference between the two normalization expressions are as follows: 
+
+**FPKM:** Total fragments in a sample are counted and divided by 1,000,000, resulting in the “per million” scaling factor. 
+Fragment counts are then divided by the “per million” scaling factor.  This normalizes for sequencing depth, resulting in fragments per million (RPM) 
+RPM values are divided by the length of the gene, in kilobases, resulting in RPKM.
+
+**TPM:** is similar to FPKM, only differing in the order of operations: 
+Total fragments are counted and divided by the length of each gene in kilobases, resulting in reads per kilobase (RPK). 
+All RPK values in a sample are counted and divided by 1,000,000, resulting in the “per million” scaling factor. 
+The RPK values are divided by the “per million” scaling factor, resulting in TPM. 
+
+While both normalization expressions are widely used in the industry, TPM has the advantage of decreased sample to sample variation.  Since the sum of all TPMs in each sample are the same, it is easier to compare the proportion of reads that map to a gene in each sample.  In contrast, with FPKM, the sum of the normalized reads in each sample may be different (e.g.  the denominator required to calculate the proportion could be different for two samples), and thus make it harder to compare samples directly. 
+
+###	Data Quality Control
+
+Qualimap version 2.2.1 (Okonechnikov et al., 2016) was used to calculate QC metrics for each of the samples using both the Qualimap bamqc and Qualimap rnaseq workflows. QC metrics that were used to include/exclude samples and the threshold for each metric are described in Qualimap.
+
+## Data sets
+
+### Publicly available cohorts
+Raw sequencing data (fastq files) were downloaded from public resources for following cohorts: GTEX (GTEx Consortium, 2013), CCLE (Ghandi et al., 2019), Blueprint (Stunnenberg et al., 2016), TCGA (Weinstein et al., 2013). Metadata for the individual samples were curated and harmonized across studies using a controlled vocabulary for clinical metadata, tissue types and cell types. For cell lines metadata were derived from the Cellosaurus resource (Bairoch, 2018). Samples were processed from fastq files to TPM values using the workflow described in 9.1.1 and samples were excluded based on QC metrics as described. 
+
+#### GTEx Data Processing
+Bam files were obtained from Omicsoft. The mapping parameters to generate the alignment bam files are the followings:
+
+/EnableAWSSpot=False
+/DetectIndels=True
+/SearchNovelExonJunction=True
+/ReportCutoff=10
+/Replace=True
+/PairedEnd=__PAIRED_END__
+/Gzip=True
+/CopyInputFilesToTempDirectory=True
+/CompressBam=True
+/CompressBamQualityCutoff=12
+/FileFormat=FASTQ
+/AutoPenalty=True
+/FixedPenalty=2
+/Greedy=False
+/IndelPenalty=2
+/MaxMiddleInsertionSize=10
+/MaxMiddleDeletionSize=10
+/MaxEndInsertionSize=10
+/MaxEndDeletionSize=10
+/MinDistalEndSize=3
+/IndexMode=14Mer
+/ExcludeNonUniqueMapping=False
+/GenerateSamFiles=False
+/WriteReadsInSeparateFiles=True
+/ExpectedInsertSize=300
+/InsertSizeStandardDeviation=40
+/InsertOnSameStrand=False
+/InsertOnDifferentStrand=True
+/QualityEncoding=Automatic
+/CompressionMethod=Gzip
+/ExpressionMeasurement=None
+/ExcludeUnmappedInBam=False;
+
+The bam files were then used to generate the TPM data, and also used for the “After mapping QC” assessment using RNA-Seq QC Metrics and RNA-Seq 5’ -> 3’ Trend. 
+
+•	We used RNASeq QC Metrics, and RNASeq Trend53 to examine the mapping quality for each sample. The Array Studio module, Aligned Data QC -> RNA-Seq QC Metrics, was used to assess the additional QC measures of all the samples, regarding their mapping qualities, insert sizes and other profiles. The Aligned Data QC -> RNA-Seq 5’ -> 3’ Trend module reveals the integrity of RNA for each sample. 
+
+•	Here are the QC cutoff we have applied to exclude the samples which failed QC:
+
+-   RIN > =6.5. RIN number was obtained during RNA preparation process
+-	Read length after trimming > 65 bases. Read length after trimming was obtained from the RNA-Seq QC Metrics
+-	5000nt+ Q4/Q1 ratio > 1 and < 2.5. 5000nt+ Q4/Q1 ratio was obtained from RNA-Seq 5’ -> 3’ Trend. 
+-	Uniquely Mapped Paired rate  > 0.7. Uniquely Mapped Paired rate was obtained from the RNA-Seq QC Metrics
+-	Exon Junction rate > 0.1. Exon Junction rate was obtained from the RNA-Seq QC Metrics
+-	Read Pair Sense Rate  > 0.490 and < 0.505. Read Pair Sense Rate was obtained from the RNA-Seq QC Metrics
+
+•	After applying these cutoffs, the total number of samples were reduced from the original 16963 to 12491 samples.
+
+### Internal data sets
+
+#### **Human BodyMap**
+
+Frozen tissue samples were purchased from BGI (Appendix). Raw fastq files from public data sets were obtained from GEO using fastq-dump from SRA Toolkit.  
+
+**Gene Models Used for Alignment and Quantification**
+
+RNA-Seq alignment and quantification utilized the human B38 genome build from Omicsoft, and Omicsoft GenCode.V33 as the gene model curated by OmicSoft listed in Table 6.
+
+**Read Filtering and Trimming**
+All read files (fastq files) were pre-processed to remove poor quality reads and to trim poor quality 3’ bases. We used the Array Studio default trimming and filtering options as the followings: Trimming /Mode=TrimByQuality /ReadTrimQuality=2
+
+**Alignment and Quantification**
+
+The filtered and trimmed reads were aligned and quantified using OmicSoft’s Array Studio NGS module: Map Reads To Genome (Illumina). The underlining alignment algorithm [Omicsoft Sequence Aligner: OSA4.0](http://www.arrayserver.com/wiki/index.php?title=OmicSoft_Aligner_Version_4_(OSA4)_Benchmark), and the gene/transcript quantification module is an OmicSoft implementation of the RSEM algorithm (Li, 2011).  The script used to run the Array Studio component of the pipeline is provided as [OmicScript Pipeline: RNA-SEQ PROCESSING SCRIPT](http://www.arrayserver.com/wiki/index.php?title=OmicScript_pipeline_for_RNA-Seq_data_analysis). Default settings from the mapping module are used. Reads which can be mapped to multiple regions (>10) are discarded. 
+
+**Expression Normalization**
+
+The gene expression of each bulk RNA-Seq sample was reported as TPM (Transcripts per Kilobase per Million reads sequenced) or FPKM (Fragments per Kilobase per Million reads sequenced).  TPM and FPKM are expressions based on the count of library fragments that map to a given feature (gene or transcript) normalized for feature length and the number of fragments sequenced. While both normalization expressions are widely used in the industry, TPM has the advantage of decreased sample to sample variation.  Since the sum of all TPMs in each sample are the same, it is easier to compare the proportion of reads that map to a gene in each sample. In contrast, with FPKM, the sum of the normalized reads in each sample may be different (e.g.  the denominator required to calculate the proportion could be different for two samples), and thus make it harder to compare samples directly.
+
+**After Mapping Data Quality Control**
+
+We have applied the Omicdata -> QC module, which includes Pairwise correlation, Correlation based QC, and Principal component analysis to assess the qualities of the JNJ internal samples and GEO public samples. At the end, we decided to apply MADS(MAD Score) = 5 as the cutoff, and samples which have MADS <= 5 were excluded. 
+
+* Re-Annotation and Re-Classification of Samples to Different Body Sites Based on Correlation Analysis
+
+    + Gene Selection
+        -  Selected top 200 genes within each body site that best distinguish this body site from the other body sites;
+        -  United all the 200 top genes from the 51 body sites, which then resulted in 6208 genes
+
+    +	Subclass Identification 
+        - Based on the selected 6208 genes across all body sites, perform clustering analysis to identify
+        subclasses/outliers within each body site
+
+    +	Subclass Reclassification
+        -	Based on selected genes across all body sites, defined the centroid of each subclass 
+        -	Performed clustering analysis among the centroids of all the subclasses across all body sites, and
+         reclassified subclasses based on the clustering results
+
+    +	Sample Reclassification
+        -	Performed correlation analysis on all the 12,491 samples against all identified subclasses, and assign each
+        sample to the subclass with the highest correlation coefficient
+
+GTEX and Janssen generated bulk-RNAseq data were compiled into one harmonized expression data set referred to as “Janssen Human BodyMap”. Detailed listing of samples per tissue/cell type and their provenance is provided in a tabular format in Appendix 1
+
+#### **Mouse**
+
+#### **Rat**
+
+#### **Cynomolgus monkey**
+
+#### **Dog**
+

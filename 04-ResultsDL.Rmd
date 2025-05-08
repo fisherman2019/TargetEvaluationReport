@@ -1,0 +1,134 @@
+# Expression in healthy human tissues and cell types 
+## Janssen Human BodyMap -- Normal Tissue Expression
+
+The Janssen Human Tissue BodyMap is a dataset based on the tissue-specific distribution of gene expression. This resource contains integrated normal tissue expression RNA-Seq data from the following public resources: [GTEx V8](https://gtexportal.org/home/), Human Dorsal Root Ganglion PolyA RNA Seq Dataset (accession phs001158), Identification of LincRNA signatures in human primary lymphocyte subsets (accession [E-MTAB-2319](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-2319/)), and Novel Observations from Next Generation RNA Sequencing of Highly Purified Human Adult and Fetal Islet Cell Subsets (accession [GSE67543](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67543)). It also includes Janssen-derived expression data from 172 studies conducted internally, which are collectively represented in JNJ_BrainMap, JNJ_GutMap, and JNJ_CHOP. Figure 7 report tissue-specific expression levels in Transcripts per kilobase Per Million reads (TPM) indicated by log2(TPM+1).
+
+### Gene level expression
+
+[![Human BodyMap Expression](Fig7a_HumanBodyMap_Expression.png)](Fig7a_HumanBodyMap_Expression.png)
+Figure 7. Log2 gene level expression per tissue type, sorted by median expression level as derived from the Janssen Human Bodymap.
+
+### Transcripts level expression
+
+[![Human BodyMap Expression](Fig8_Transcripts_log2_Expression.png)](Fig8_Transcripts_log2_Expression.png)
+Figure 8. Log2 Transcripts level expression per tissue type, sorted by median expression level as derived from the Janssen Human BodyMap.
+
+## Janssen Human BodyMap -- paralogues expression
+
+[![Human paralogues Expression](Fig9_Paralogues-Expression2.png)](Fig9_Paralogues-Expression2.png)
+
+Figure 9. Stacked barplot - percentages of samples meeting TPM cutoffs (TPM 1,5,20,100 – as indicated by the colors) for `r GeneofInterest` and its paralogues genes.
+
+## BodyMap -- homologues expression
+The cross-species analysis of `r GeneofInterest` expression are performed among human, mouse, dog and rat, and the comparison results are showing as following:
+
+A: **Cardiovascular Tissues**
+[![BodyMap orthologues Expression1](Fig10A_CrossSpeciesComparison.png)](Fig10A_CrossSpeciesComparison.png)
+
+B: **Tissues of the digestive system**
+[![BodyMap orthologues Expression2](Fig10B_CrossSpeciesComparison.png)](Fig10B_CrossSpeciesComparison.png)
+
+C: **Endocrine Tissues**
+[![BodyMap orthologues Expression3](Fig10C_CrossSpeciesComparison.png)](Fig10C_CrossSpeciesComparison.png)
+
+D: **Ocular Tissues**
+[![BodyMap orthologues Expression4](Fig10D_CrossSpeciesComparison.png)](Fig10D_CrossSpeciesComparison.png)
+
+E: **Adipose Tissues**
+[![BodyMap orthologues Expression5](Fig10E_CrossSpeciesComparison.png)](Fig10E_CrossSpeciesComparison.png)
+
+F: **Tissues and cells associated with the immune system**
+[![BodyMap orthologues Expression6](Fig10F_CrossSpeciesComparison.png)](Fig10F_CrossSpeciesComparison.png)
+
+G: **Musculoskeletal tissues**
+[![BodyMap orthologues Expression7](Fig10G_CrossSpeciesComparison.png)](Fig10G_CrossSpeciesComparison.png)
+
+H: **Central nervous system tissues**
+[![BodyMap orthologues Expression8](Fig10H_CrossSpeciesComparison.png)](Fig10H_CrossSpeciesComparison.png)
+
+I: **Peripheral nervous system tissues**
+[![BodyMap orthologues Expression9](Fig10I_CrossSpeciesComparison.png)](Fig10I_CrossSpeciesComparison.png)
+
+J: **Reproductive system tissues**
+[![BodyMap orthologues Expression10](Fig10J_CrossSpeciesComparison.png)](Fig10J_CrossSpeciesComparison.png)
+
+K: **Respiratory system tissues**
+[![BodyMap orthologues Expression11](Fig10K_CrossSpeciesComparison.png)](Fig10K_CrossSpeciesComparison.png)
+
+L: **Integumentary system tissues**
+[![BodyMap orthologues Expression12](Fig10L_CrossSpeciesComparison.png)](Fig10L_CrossSpeciesComparison.png)
+
+M: **Urinary system tissues**
+[![BodyMap orthologues Expression13](Fig10M_CrossSpeciesComparison.png)](Fig10M_CrossSpeciesComparison.png)
+
+Figure 10. Stacked barplot showing percentages of samples meeting TPM cutoffs (TPM 1,5,20,100 – as indicated by the colors) for `r GeneofInterest` and its orthologues.
+
+## Expression in primary cell types (FANTOM5)
+
+The Functional Annotation of the Mouse/Mammalian Genome ([FANTOM](https://fantom.gsc.riken.jp/5/)) expression data were generated across a collection of 573 human primary cell samples (∼ 3 donors for most cell types) and 128 mouse primary cell samples, covering most mammalian cell steady states. `r GeneofInterest` expression in human primary cell types are displayed in the following figure.
+
+[![FANTOM5 cell Expression](Fig11a_FANTOM5_log2_Expression.png)](Fig11a_FANTOM5_log2_Expression.png)
+Figure 11. Log2 gene level expression per cell type, sorted by median expression level as derived from the FANTOM5 data set.
+
+## Expression in immune cell types 
+
+### Expression profiles from BLUEPRINT
+
+The [BLUEPRINT project](https://www.blueprint-epigenome.eu/) was designed to generate at least 100 reference epigenomes of distinct types of hematopoietic cells from healthy individuals and their malignant counterparts. The latest public release includes data from monocytes, granulocyte neutrophils, eosinophils, macrophages (M0, M1, and M2), naive CD4+ and naive CD8+ T cells and cell lines. Samples with hematological cancers were removed from analysis and normal samples were retained. `r GeneofInterest` Expression in BLUEPRINT data were filtered by TPM >0.01 and showed as log2(TPM+1).
+
+[![BluePrint immune cell Expression](Fig12a_BluePrint_Expression.png)](Fig12a_BluePrint_Expression.png)
+Figure 12. Log2 gene level expression per cell type, sorted by median expression level as derived from the BLUEPRINT data set.
+
+### Expression profiles from DICE
+The [DICE](https://dice-database.org/landing) (Database of Immune Cell Expression, Expression quantitative trait loci (eQTLs) and Epigenomics) project was established to detect variants that affect gene expression in various immune cell types. DICE includes transcriptomic data generated from 13 immune cell types isolated from 106 leukapheresis samples provided by 91 healthy subjects. The cell types comprise over 60% of all circulating mononuclear cells and include three innate immune cell types (CD14+high CD16-classical monocytes, CD14- CD16+non-classical monocytes, CD56+dim CD16+NK cells), four adaptive immune cell types that have not encountered cognate antigen in the periphery (naive B cells, naive CD4+T cells, naive CD8+T cells, and naive regulatory T cells [TREG]), six CD4+memory or more differentiated T cell subsets (TH1, TH1/17, TH17, TH2, follicular helper T cell [TFH], and memory TREG), and two activated cell types (naive CD4+ and CD8+ T cells) that were stimulated ex vivo. Target gene expression in log2(TPM) for each assessed cell type is displayed in the following figure. [DICE Expression](https://dice-database.org/genes/`r GeneofInterest`).
+
+[![DICE immune cell Expression](Fig13a_DICE_Expression.png)](Fig13a_DICE_Expression.png)
+Figure 13. Log2 gene level expression per cell type, sorted by median expression level as derived from the DICE data.
+
+## Matched gene and protein expression (HPA)
+
+The [Human Protein Atlas](http://www.proteinatlas.org/) (HPA) portal is an open-access database supplying protein and RNA expression data for 
+postnatal human tissues and cell lines. Current HPA_B37 includes the RNA expression data (37 tissues and part of the cell lines). Detailed information can be found under Summary of `r GeneofInterest` expression from [HPA Summary](https://www.proteinatlas.org/`r ensemblID`-`r GeneofInterest`). 
+
+### HPA - Protein expression
+
+Human Protein Atlas immunohistochemistry data were reviewed and based on the high level of background and nonspecific staining with a poorly validated polyclonal antibody the data were considered unreliable and not included in this report.
+
+### HPA - Gene expression
+
+[![HPA RNASeq Expression](Fig14_HPA_log2_Expression.png)](Fig14_HPA_log2_Expression.png)
+Figure 14. Log2 gene level expression per tissue type, sorted by median expression level as derived from the HPA mRNA data set. 
+
+### HPA - Single-Cell RNA-Seq expression
+
+The HPA single cell RNA sequencing dataset is based on meta-analysis of literature on single cell RNA sequencing and single cell databases that include healthy human tissue. The following data selection criteria were applied: (1) Single cell transcriptomic datasets were limited to those based on the Chromium single cell gene expression platform from 10X Genomics (version 2 or 3); (2) Single cell RNA sequencing was performed on single cell suspension from tissues without pre-enrichment of cell types; (3) Only studies with >4,000 cells and 20 million read counts were included, (4) Only dataset for which whose pseudo-bulk transcriptomic expression profile is highly correlated with the transcriptomic expression profile of the corresponding HPA tissue bulk sample were included. It should be noted that exceptions were made for lung (~7.3 million reads), pancreas (3,719 cells) and rectum (3,898 cells) to include various cell types in the analysis. The sample details of the selected studies are included in Appendix 7. 
+
+**This Single-Cell expression profile and figure are provided for your reference only, further validation maybe needed**. 
+
+[![HPA sc-RNASeq Expression](Fig15_HPA_SingleCell.png)](Fig15_HPA_SingleCell.png)
+Figure 15. pTPM expression per cell cluster within tissue type from the HPA Single-Cell RNA-Seq data set.
+
+# Expression in cancer
+
+## Expression profiles from TCGA
+
+**The Cancer Genome Atlas (TCGA)** is a comprehensive and coordinated effort to accelerate our understanding of the molecular basis of cancer through the application of genome analysis technologies, including large-scale genome sequencing. Includes data from over 33 cancer types, spanning RNA-Seq, DNA-Seq, Copy Number, Methylation, Expression array (Agilent), and protein array (RPPA) data. Data source: [The Cancer Genome Atlas](https://gdc-portal.nci.nih.gov/)
+
+### Primary tumors (TCGA)
+
+[![TCGA Primary tumor Expression](Fig17_TCGA_Tumors_log2Expression.png)](Fig17_TCGA_Tumors_log2Expression.png)
+Figure 16. Log2 gene level expression per tumor type, sorted by median expression level as derived from the TCGA data set.
+
+### Expression in primary tumors and adjacent normal tissues (TCGA)
+
+[![TCGA tumorVSnormal Expression](Fig18_TumorVSNormal_log2Expression.png)](Fig18_TumorVSNormal_log2Expression.png)
+Figure 17. Log2 gene level expression per tumor type and adjacent normal tissue(from tissue near the tumor), sorted by median expression level as derived from the TCGA data set. 
+
+## Baseline expression - oncology cell lines - CCLE
+
+The **Cancer Cell Line Encyclopedia (CCLE)** project is an effort to conduct a detailed genetic characterization of a large panel of human cancer cell lines. CCLE provides public access to the analysis and visualization of DNA copy number, mRNA expression, mutation data and more, for 1000 cancer cell lines. Data source: [CCLE](https://sites.broadinstitute.org/ccle).
+
+In the [CCLE - Cancer Cell Line Encyclopedia], some cell lines show `r GeneofInterest` expression (plot shows log2(TPM+1)). Cancer cell lines that show high expression of `r GeneofInterest`are shown in Figure 19:
+
+[![CCLE Cell-line Expression](Fig19_CCLE_Expression.png)](Fig19_CCLE_Expression.png)
+Figure 18. Log2 gene level expression grouped per tumor type, sorted by median expression level as derived from the CCLE data set. 

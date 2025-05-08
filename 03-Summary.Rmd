@@ -1,0 +1,378 @@
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+devtools::source_gist("c83e078bf8c81b035e32c3fc0cf04ee8", filename = 'render_toc.R')
+```
+
+# Overview and Result Interpretation
+
+##**Objectives**
+
+The objective of the study was to evaluate the mRNA expression and protein abundance of `r GeneofInterest` (`r gene_info[[1]]$name`).
+
+RNA sequencing (RNA-Seq) was used to measure mRNA levels of `r GeneofInterest` in a diverse set of healthy tissues and cell types from humans.
+
+mRNA expression results reported herein are from Janssen-generated human data and data re-processed from the **Genotype-Tissue Expression (GTEx)** consortium using a Janssen-specific computational pipeline (collectively referred to as the Janssen BodyMap) which accounted for the majority of human non-diseased tissue samples and cell types assessed for `r GeneofInterest` gene expression. Other publicly available human RNA-Seq data (**dbGAP**, **EMBL-EBI**, and **NCBI GEO**) were also re-processed in a standardized manner. **FANTOM5** and **BLUEPRINT** datasets, containing expression information from primary cell and immune cell types, respectively, were not re-processed at Janssen.
+
+##**Figure visualization and interpretation**
+
+Gene or transcript level mRNA expression results are shown, grouped by tissue, cell or cancer type and ranked by median expression level. The unit of expression used in the different graph are typically log2 transformed TPM values. As in a log2 scale, lowly expressed genes (TPM < 1) would have negative values, a pseudo-count of 1 was added before log2 transformation. More information on the generation, processing, quantification and normalization of the RNAseq data can be found in the Methods section of this document. 
+
+For ease of interpretation, color codes were applied to indicate the expression level:
+
+[![Scale Bar of Expression](ScaleBar_ExpressionLevel.png)](ScaleBar_ExpressionLevel.png)
+
++	Blue – no or very low expression: < 1 TPM
++	Green – low expression: 1-5 TPM
++ Orange – medium expression: 5-20 TPM
++	Red – high expression: 20-100 TPM
++	Purple – very high expression: > 100 TPM
+
+These indicative expression levels (1 TPM, 5 TPM, 20 TPM, 100 TPM) are also added as dashed grey lines to help the interpretation and to assist comparison across tissues and sources. These lines are annotated on top of the figure, indicating which cutoff level the dashed lines corresponds to.
+
+**Stacked barplots** are relative plots where the percentage of samples meeting an expression cutoff (as described above) are indicated in the different colors. The total is 100%, the actual distribution or number of samples cannot be explored in these plots as they are typically used for comparing across conditions (such as paralogues in the same tissue or cross-species comparisons).
+
+**Boxplots** are overlayed in grey, the box represents the IQR (Interquartile range, from the first quantile to the third quantile – median is the vertical bar in the middle). 50% of the data is within this IQR. The lines left and right from the box (the whiskers) extend the box to whatever is closest to the box. For the whisker on the right: either the maximum or third quartile + 1.5 *IQR; for the left: either the minimum or first quartile -1.5*IQR.
+
+
+# Gene Summary {#Summary}
+
+## Basic gene info
+
+`r GeneofInterest` encodes `r gene_info[[1]]$name` and is located on `r gene_info[[1]]$map_location`.
+
+It has the following aliases:
+
+```{r results='asis',echo = FALSE,message = FALSE,warning = FALSE}
+cat(paste('*', gene_info[[1]]$other_names), sep = '\n')
+```
+
+It has the following RefSeq identifiers:
+
+**mRNA**
+
+```{r results='asis',echo = FALSE,message = FALSE,warning = FALSE}
+cat(paste('*', gene_info[[1]]$refseq$rna), sep = '\n')
+```
+
+**protein**
+
+```{r results='asis',echo = FALSE,message = FALSE,warning = FALSE}
+cat(paste('*', gene_info[[1]]$refseq$protein), sep = '\n')
+```
+
+## Gene function summary
+
+`r gene_info[[1]]$summary`
+
+## Gene structure and transcriptional model
+
+`r GeneofInterest` has a well described gene structure with xx exons, xx splice variants and only xx of them are protein coding isoforms. `r GeneofInterest`-xx are the isoforms labeled as the canonical transcript with CCDS (Table 1).
+
+Table 1. `r GeneofInterest`  gene model and transcript identifiers. Matching transcript and protein isoforms are shown using Ensembl, CCDS, UniProt and RefSeq identifiers.
+
+```{r echo = FALSE,message = FALSE,warning = FALSE}
+# retrieve Ensembl data
+#Table 1: spliced isoforms
+table1 <- getBM(attributes = c("external_transcript_name", #name
+                               "ensembl_transcript_id_version", #transcipt ID
+                               "transcript_length", #bp
+                               "peptide", #protein
+                               "transcript_biotype", #biotype
+                               "ccds", #CCDS
+                               "uniprot_isoform", "uniprotsptrembl", #Uniprot Match
+                               "transcript_mane_select"), #RefSeq Match
+                filters = "hgnc_symbol", values = GeneofInterest, mart = ensembl)
+table1$peptide <- paste0(as.character(nchar(table1$peptide) -1), "aa") # count protein length
+table1$uniprot_isoform[table1$uniprot_isoform == ""] <- table1$uniprotsptrembl[table1$uniprot_isoform == ""] # merge two columns
+table1 <- table1[,!(names(table1) %in% "uniprotsptrembl")] # remove redundant column
+table1$ccds[table1$ccds == ""] <- "-"
+table1$transcript_mane_select[table1$transcript_mane_select == ""] <- "-"
+table1 <- table1[,c("external_transcript_name",
+                    "ensembl_transcript_id_version",
+                    "transcript_length", "peptide",
+                    "transcript_biotype", "ccds",
+                    "uniprot_isoform",
+                    "transcript_mane_select") ] # change order
+# change column names
+colnames(table1) <- c("Name", "Transcript ID", "bp", "Protein", "Biotype", "CCDS", "UniProt Match", "RefSeq Match")
+#export the table
+knitr::kable(table1, "pipe")
+
+#write.csv(table1, paste(outputDir,"Table1_SplicedIsoforms.csv", sep="/"),row.names = FALSE)
+
+
+```
+
+
+[![Gene model](Fig1_Exon-Intron.png)](Fig1_Exon-Intron.png)
+Figure 1. Exon-Intron structure of `r GeneofInterest` and splice variants
+
+## Orthologues
+
+All species with an orthologue in [ENSEMBL](http://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=`r ensemblID`;r=`r Region`) are retrieved and showed in GeneTree. The phylogenetic relationships between the protein sequences are shown in this tree. High sequence identity are found among most mammalian species: *Chimpanzee(Pan troglodytes)*(>xx% identity), *Monkey(Macaca mulatta)* (>xx% identity), *Dog(Canis lupus familiaris)*(>xx% identity) and *Pig (Sus scrofa)*(>xx% identity), *Rabbit(Oryctolagus cuniculus)*(>xx%), and *Mouse(Mus musculus)*(>xx% identity).
+
+Table 2. `r GeneofInterest` orthologs comparison among mammal species
+```{r echo = FALSE,message = FALSE,warning = FALSE}
+
+url <- paste0("https://www.ensembl.org/Homo_sapiens/Component/Gene/Compara_Ortholog/orthologues?db=core;g=", ensemblID)
+
+content <- read_html(url)
+cssSelector <- "#orthologues"
+orthologues <- content %>%
+  html_elements(cssSelector) %>%
+  html_table()
+orthologues <- orthologues[[1]]
+orthologues$Species <-sub("(.*)(?=\\()", "\\1 ", orthologues$Species, perl = T)
+names(orthologues) <- c("Species",
+                        "Type",
+                        "Orthologue",
+                        "Target%id",
+                        "Query%id",
+                        "GOC Score",
+                        "WGA Coverage",
+                        "High Confidence")
+orthologues <- orthologues[,c("Species",
+                              "Orthologue",
+                              "Target%id",
+                              "Query%id",
+                              "WGA Coverage",
+                              "High Confidence")]
+
+species <- c(
+  "Gorilla (Gorilla gorilla gorilla)", 
+  "Bonobo (Pan paniscus)", 
+  "Chimpanzee (Pan troglodytes)", 
+  "Macaque (Macaca mulatta)",
+  "Dog (Canis lupus familiaris)",
+  "Sheep (Ovis aries)",
+  "Mouse (Mus musculus)",
+  "Rat (Rattus norvegicus)",
+  "Pig (Sus scrofa)",
+  "Rabbit (Oryctolagus cuniculus)",
+  "Chicken (Gallus gallus)"
+)
+orthologues <- orthologues[orthologues$Species %in% species,] 
+orthologues <- orthologues|> arrange(desc(orthologues$`Target%id`))
+#export table2
+#write.csv(orthologues, paste(outputDir,"Table2_ComparaOrthologs-Homo_sapiens.csv", sep = "/"), row.names = FALSE)
+knitr::kable(orthologues, "pipe", row.names = FALSE)
+```
+
+
+[![Orthology tree](Fig2_GeneTree.png)](Fig2_GeneTree.png)
+
+Figure 2. Phylogenetic tree structure based on the orthologues of `r GeneofInterest`.
+
+## Paralogue / similar genes search
+
+Paralogues of `r GeneofInterest` are also retrieved from [ENSEMBL](http://www.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=`r ensemblID`;r=`r Region`) and showed in Table 3.
+
+Table 3. `r GeneofInterest` Paralogues view
+```{r echo = FALSE,message = FALSE,warning = FALSE}
+Table3 <- getBM(attributes = c("external_gene_name",
+                               "hsapiens_paralog_ensembl_gene", 
+                               "hsapiens_paralog_associated_gene_name",
+                               "hsapiens_paralog_chromosome",
+                               "hsapiens_paralog_chrom_start",
+                               "hsapiens_paralog_chrom_end",
+                               "hsapiens_paralog_perc_id",
+                               "hsapiens_paralog_perc_id_r1"),
+                filters = "external_gene_name",
+                values = GeneofInterest, mart = ensembl)
+colnames(Table3) <- c("Gene", "Paralogue EnsemblID", "Paralogue Gene","Chrom", "chrom_start", "chrom_end", "Query%id", "Target%id")
+Table3 <- Table3 |> unite(col = "Location", Chrom, chrom_start, sep = ":") |>
+  unite(col = "Location", Location, chrom_end, sep = "-" )
+Table3 <- Table3 |> arrange(desc(Table3$'Target%id'))
+Table3[, 'Target%id']= paste0(round(Table3[, 'Target%id'], 2),"%", sep="")
+Table3[, 'Query%id']= paste0(round(Table3[, 'Query%id'], 2),"%", sep="")
+#export table 3
+knitr::kable(Table3, "pipe", row.names = FALSE) 
+#write.csv(Table3, paste(outputDir,"Table3_ParaloguesList.csv", sep = "/"), row.names = FALSE)
+
+```
+
+Paralogues are genes that derive from the same ancestral gene and now reside at different locations within the same genome. Paralogues typically have a large identity. In addition, we extend the search for more distinct genes with sequence similarities. There are `r nrow(Table3)` paralogues detected for `r GeneofInterest`, and paralogues with high homology are listed as Table 3.
+
+
+# Protein Summary {#Summary}
+
+Protein domains, functions, predicted structure, protein-protein interactions (PPI) are extracted from UniProtKB by uniprotein ID. More information can be found at [UniProtKB Summary](https://www.uniprot.org/uniprot/`r uniprotID`)
+
+## Protein Function
+```{r results='asis', echo = FALSE,message = FALSE,warning = FALSE}
+# get protein function summary
+ProteinFunction <- GetProteinFunction(uniprotID ,  directorypath = NULL)
+cat(ProteinFunction$`Function..CC.`[1])
+```
+
+## GO - Biological Process
+```{r results='asis', echo = FALSE,message = FALSE,warning = FALSE}
+ProteinGO<- GetProteinGOInfo(uniprotID, directorypath = outputDir)
+
+cat(gsub("; ", "\n", ProteinGO$Gene.Ontology..biological.process.[1]))
+
+#generate a combined plot for the enriched Gene Ontology
+#PlotEnrichedGO(uniprotID,OS="hsapiens",p_value=0.05,Path=NULL,theme="aaas",width=7,height=7)
+```
+
+## GO - Molecular function
+```{r results='asis', echo = FALSE,message = FALSE,warning = FALSE}
+cat(gsub("; ", "\n", ProteinGO$Gene.Ontology..molecular.function.[1]))
+
+```
+
+## Pathways(Reactome)
+```{r results='asis', echo = FALSE,message = FALSE,warning = FALSE}
+Pathway <- gene_info[[1]]$pathway$reactome
+
+ReactomeList <- as.data.frame(do.call("rbind",Pathway))
+colnames(ReactomeList)<-c("ID", "Name")
+knitr::kable(ReactomeList, "pipe", row.names = FALSE) 
+```
+
+## Subcellular Location
+```{r results='asis', echo = FALSE,message = FALSE,warning = FALSE}
+# retrieve protein Subcellular location
+Subcellular_location<- GetSubcellular_location(uniprotID, directorypath = NULL)
+cat(Subcellular_location$Subcellular.location..CC.[1])
+```
+
+## Protein structure
+
+### Domain structure and family
+
+**Predicted Family**
+
+```{r results='asis', echo = FALSE,message = FALSE,warning = FALSE}
+#retrieve Family Domains data 
+Familydomain <- GetFamily_Domains(uniprotID, directorypath = NULL)
+cat(Familydomain$`Domain..CC.`[1])
+
+```
+
+The protein identified for `r GeneofInterest` from UniProtKB is `r uniprotID`. Based on protein domains and structure, `r GeneofInterest` (`r uniprotID`) belongs to xx family ([InterPro](https://www.ebi.ac.uk/interpro/protein/UniProt/`r uniprotID`/).
+
+
+[![Interpro protein domains](Fig3_protein_Domain.png)](Fig3_protein_Domain.png)
+
+Figure 3. Protein domain structure of `r GeneofInterest`.
+
+**Predicted Domain Structure**
+
+Predicted domains, regions, repeats and Compositional bias are listed in Table 4.
+
+Table 4. Predicted Domain Features of `r uniprotID`.
+```{r  echo = FALSE,message = FALSE,warning = FALSE}
+library(ape)
+outputDir <- paste0("~/TEP_ReportFigures/", GeneofInterest, "_Expression")
+# create link
+link <- paste0("https://www.uniprot.org/uniprot/", uniprotID, ".gff")
+# read table
+table <- read.gff(link)
+# select domain, region and compositional bias rows
+table <- table[table$type == "Domain" | table$type == "Region" | table$type =="Repeat" | table$type == "Compositional bias",]
+table <- table %>% mutate("Gene Name" = GeneofInterest)
+# make some alterations so we have the desired format
+table$"Position(s)" <- paste(table$start, "-", table$end)
+table$attributes <- sub(".*Note=", "", table$attributes)
+table$attributes <- sub(";.*", "", table$attributes)
+table$Length <- table$end - table$start +1
+table <- table %>%
+  dplyr::select("Gene Name", seqid, type, "Position(s)", attributes, Length) %>%
+  dplyr::rename("Uniprotein ID" = seqid, "Feature key" = type, Description = attributes)
+knitr::kable(table, "pipe", row.names = FALSE)
+  
+# write to a csv
+write.csv(table, paste(outputDir, "Table4_DomainStructure.csv", sep = "/"), row.names = FALSE)
+```
+
+
+### Structure and PTMs
+
+The domain and motif structures are generated and viewed by protter— an open-source tool for visualization of proteoforms and interactive integration of annotated and predicted sequence features [Protter](http://wlab.ethz.ch/protter/start/). A predicted 3D structure is also showed in Figure 4 from AlphaFold structure prediction [AlphaFold structure](https://alphafold.ebi.ac.uk/entry/`r uniprotID`).
+
+A: *Protter protein structure*
+
+
+[![Protter structure](Figure4A-ProtterStructure.png)](Figure4A-ProtterStructure.png)
+
+B: *AlphaFold predicted structure*
+
+[![AlphaFold 3D structure](Fig4_AlphaFold.png)](Fig4_AlphaFold.png)
+Figure 4. Predicted protein structure from protter (A) and AlphaFold Model(B).
+
+## Gene regulation
+
+### Promoter exploration and TF binding
+
+`r GeneofInterest` is regulated by an active promoter and enhancer. In both the enhancer and promoter regions, there are many strong H3K27ac marks identified, which indicates potential regulatory elements. 
+
+The region might be under epigenetic control.
+
+[![Regulation - high level overview](Fig5_genome_ucsc.png)](Fig5_genome_ucsc.png)
+Figure 5. Upstream regulation of `r GeneofInterest` from UCSC browser.
+
+### Interacting protein network
+
+Using [GPSprot](http://gpsprot.org), a meta-resource (including data from multiple PPI sources, including CORUM, BioGrid, IntAct, BIND etc.), a protein-protein interaction network of proteins interacting with `r GeneofInterest` can be constructed. PPI network from STRING  for `r GeneofInterest` is included as Figure 6. 
+
+[![Network of interacting proteins](Fig6_PPI_image.png)](Fig6_PPI_image.png)
+Figure 6. Protein-protein interaction network of `r GeneofInterest` from STRING.
+
+# Global target exploration - perturbations
+
+## *In vitro* High-throughput perturbation screens
+
+Perturbations (CRISPR screens, RNAi screens - [DepMap - the cancer dependency map](https://depmap.org/portal)) show Probability of Dependency of dependent cell lines (*A cell line is considered dependent if it has a probability of dependency greater than 0.5*.) (CRSPR = 170/1070 & RNAi = 10/711) on `r GeneofInterest` which is **STRONGLY SELECTIVE** for both CRISPR and RNAi. Overview of the Expression,  Perturbation Effects, Mutations, Predictability and Target Tractability of `r GeneofInterest` can be found in [DepMap Overview](https://depmap.org/portal/gene/`r GeneofInterest`?tab=overview)
+
+**COMMON ESSENTIAL**: A gene which, in a large, pan-cancer screen, ranks in the top X most depleting genes in at least 90% of cell lines. X is chosen empirically using the minimum of the distribution of gene ranks in their 90th percentile least depleting lines.
+
+**STRONGLY SELECTIVE**: A gene whose dependency is at least 100 times more likely to have been sampled from a skewed distribution than a normal distribution(i.e. skewed-LRT value > 100).
+
+**GENE EFFECT**: Outcome from DEMETER2 or CERES. A lower score means that a gene is more likely to be dependent in a given cell line. A score of 0 is equivalent to a gene that is not essential whereas a score of -1 corresponds to the median of all common essential genes.
+
+**Enriched Lineages** (Enriched lineages have p-values < 0.0005 (shown in parentheses))
+
+**CRISPR (DepMap 21Q4 Public+Score, Chronos)**
+
+
+**RNAi (Achilles+DRIVE+Marcotte, DEMETER2)**
+
+
+## *In vivo* Animal Models
+
+Available mouse models for `r GeneofInterest` are retrieved by searching in [MGI(Jackson lab)](http://www.informatics.jax.org/). Mouse Phenotype, Alleles and Disease models for `r GeneofInterest` are listed in Table 5.
+
+**Human Diseases Associations**
+
+```{r results='asis', echo = FALSE,message = FALSE,warning = FALSE}
+Phenotypes <- getBM(attributes =
+                    "phenotype_description", "source_name",
+                    filters = "external_gene_name", values = GeneofInterest, mart = ensembl )
+cat(paste('*', Phenotypes$phenotype_description), sep = '\n')
+```
+
+**The Phenotypes, Alleles & Disease Models**
+
+Table 5. Mammalian Phenotype and Disease Model
+```{r echo = FALSE,message = FALSE,warning = FALSE}
+#get allele table
+
+getAlleleSummary <- function(ID) {
+  link <- paste0("http://www.informatics.jax.org/allele/report.txt?markerId=", ID)
+  dat <- fread(link, header = TRUE, data.table = FALSE)
+  dat <- dat[,-length(dat)]
+  return(dat)
+}
+
+ID <- paste0("MGI:", gene_info[[1]]$pantherdb$ortholog[[1]]$MGI)
+alleleSummaryTable <- getAlleleSummary(ID)
+
+#Table6 <- read_excel("Table6-MGIalleleQuery.xlsx")
+knitr::kable(alleleSummaryTable, "pipe")
+
+```
+
+Searching in [MGI - mouse genome informatics (Jackson lab)](http://www.informatics.jax.org/allele/report.txt?markerId= `r ID`), we found `r nrow(alleleSummaryTable)` mutation mouse models for `r GeneofInterest`. There are no mutation mouse models for `r GeneofInterest` that are related to human  diseases (Table 5).
+
