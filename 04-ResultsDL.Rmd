@@ -1,7 +1,7 @@
 # Expression in healthy human tissues and cell types 
-## Janssen Human BodyMap -- Normal Tissue Expression
+## Human BodyMap -- Normal Tissue Expression
 
-The Janssen Human Tissue BodyMap is a dataset based on the tissue-specific distribution of gene expression. This resource contains integrated normal tissue expression RNA-Seq data from the following public resources: [GTEx V8](https://gtexportal.org/home/), Human Dorsal Root Ganglion PolyA RNA Seq Dataset (accession phs001158), Identification of LincRNA signatures in human primary lymphocyte subsets (accession [E-MTAB-2319](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-2319/)), and Novel Observations from Next Generation RNA Sequencing of Highly Purified Human Adult and Fetal Islet Cell Subsets (accession [GSE67543](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67543)). It also includes Janssen-derived expression data from 172 studies conducted internally, which are collectively represented in JNJ_BrainMap, JNJ_GutMap, and JNJ_CHOP. Figure 7 report tissue-specific expression levels in Transcripts per kilobase Per Million reads (TPM) indicated by log2(TPM+1).
+The Human Tissue BodyMap is a dataset based on the tissue-specific distribution of gene expression. This resource contains integrated normal tissue expression RNA-Seq data from the following public resources: [GTEx V8](https://gtexportal.org/home/), Human Dorsal Root Ganglion PolyA RNA Seq Dataset (accession phs001158), Identification of LincRNA signatures in human primary lymphocyte subsets (accession [E-MTAB-2319](https://www.ebi.ac.uk/arrayexpress/experiments/E-MTAB-2319/)), and Novel Observations from Next Generation RNA Sequencing of Highly Purified Human Adult and Fetal Islet Cell Subsets (accession [GSE67543](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67543)). It also includes Janssen-derived expression data from 172 studies conducted internally, which are collectively represented in JNJ_BrainMap, JNJ_GutMap, and JNJ_CHOP. Figure 7 report tissue-specific expression levels in Transcripts per kilobase Per Million reads (TPM) indicated by log2(TPM+1).
 
 ### Gene level expression
 
@@ -13,7 +13,7 @@ Figure 7. Log2 gene level expression per tissue type, sorted by median expressio
 [![Human BodyMap Expression](Fig8_Transcripts_log2_Expression.png)](Fig8_Transcripts_log2_Expression.png)
 Figure 8. Log2 Transcripts level expression per tissue type, sorted by median expression level as derived from the Janssen Human BodyMap.
 
-## Janssen Human BodyMap -- paralogues expression
+## Human BodyMap -- paralogues expression
 
 [![Human paralogues Expression](Fig9_Paralogues-Expression2.png)](Fig9_Paralogues-Expression2.png)
 
